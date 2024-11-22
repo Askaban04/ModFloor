@@ -6,8 +6,7 @@ import net.minecraft.util.EnumChatFormatting;
 
 public class ChatUtils {
 
-    private static final String RALPH = EnumChatFormatting.AQUA + "RALPH : "+ EnumChatFormatting.RESET;
-
+    private static final String RALPH = EnumChatFormatting.AQUA + "RALPH : " + EnumChatFormatting.RESET;
     public static void clientMessage(String str) {
         if (Minecraft.getMinecraft().thePlayer == null) return;
         Minecraft.getMinecraft().thePlayer.addChatMessage(new ChatComponentText(RALPH + str));
@@ -21,5 +20,10 @@ public class ChatUtils {
     public static void debug(Object o) {
         if (Minecraft.getMinecraft().thePlayer == null) return;
         Minecraft.getMinecraft().thePlayer.addChatMessage(new ChatComponentText(RALPH + String.valueOf(o)));
+    }
+
+    public static void help(Object o) {
+        if (Minecraft.getMinecraft().thePlayer == null) return;
+        Minecraft.getMinecraft().thePlayer.addChatMessage(new ChatComponentText(RALPH + EnumChatFormatting.GREEN + String.valueOf(o)));
     }
 }

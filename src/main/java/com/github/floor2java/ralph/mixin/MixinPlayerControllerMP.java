@@ -1,5 +1,6 @@
 package com.github.floor2java.ralph.mixin;
 
+import com.github.floor2java.ralph.features.WartMacro;
 import com.github.floor2java.ralph.utils.ChatUtils;
 import net.minecraft.block.BlockBush;
 import net.minecraft.client.multiplayer.PlayerControllerMP;

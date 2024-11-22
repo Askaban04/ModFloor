@@ -4,5 +4,5 @@ public enum WartState {
 
     walking,
     rotating,
-    captcha
+    captcha,
 }
