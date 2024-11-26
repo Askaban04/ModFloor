@@ -2,16 +2,13 @@
   {
     "modid": "${modid}",
     "name": "Optifine BETA-1.2-DEV-VERSION",
-    "description": "A mod that is used as an example.",
+    "description": "Some optimisation mod",
     "version": "${version}",
     "mcversion": "${mcversion}",
-    "url": "https://github.com/romangraef/Forge1.8.9Template/",
+    "url": "https://optifine.net/",
     "updateUrl": "",
     "authorList": [
-      "Adolf Hitler",
-      "Nigga man",
-      "40nabaksa",
-      "erodnapssob"
+      "Plancher",
     ],
     "credits": "",
     "logoFile": "",

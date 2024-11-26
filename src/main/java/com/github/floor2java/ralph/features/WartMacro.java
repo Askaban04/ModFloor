@@ -39,6 +39,7 @@ public class WartMacro {
     static int timer = 0;
     static int captchaAmount = 0;
     static int jdcAmount = 0;
+    static int eleAmount = 0;
     static int moneyAmount = 0;
 
     static int tick = 0;
@@ -144,9 +145,10 @@ public class WartMacro {
         if (!isEnabled()) return;
 
         FontUtils.drawCenteredString("Session time : " + str(formatSeconds(timer / 20)), 200, 100);
-        FontUtils.drawCenteredString("Captchas : " + str(captchaAmount), 200, 110);
-        FontUtils.drawCenteredString(!isInventoryFull() ? "JDC : " + str(jdcAmount) : "JDC : " + str(jdcAmount) + " (inventory full)", 200, 120);
-        FontUtils.drawCenteredString("RinaCoins : "+formatNumber(moneyAmount) + "\u24C7", 200, 130);
+        FontUtils.drawCenteredString("Captchas : " + str(captchaAmount), 200, 140);
+        FontUtils.drawCenteredString(!isInventoryFull() ? "JDC : " + str(jdcAmount) : "JDC : " + str(jdcAmount) + " (inventory full)", 200, 110);
+        FontUtils.drawCenteredString("Elémentium : "+str(eleAmount), 200, 130);
+        FontUtils.drawCenteredString("RinaCoins : " + formatNumber(moneyAmount) + "\u24C7", 200, 120);
     }
 
     @SubscribeEvent
@@ -160,7 +162,6 @@ public class WartMacro {
             if (!isInventoryFull())
                 jdcAmount++;
         } else if (message.contains("Vous recevez une prime d'activité de ")) {
-
             String moneyString = message.replaceAll("Vous recevez une prime d'activité de ", "").substring(2);
             moneyString = moneyString.replaceAll("[^\\d]", "");
             try {
@@ -170,6 +171,8 @@ public class WartMacro {
                 debug("WartMacro.java LINE 170");
             }
 
+        } else if (message.contains("Vous trouvez une Barre d'élémentium.")) {
+            eleAmount++;
         }
     }
 
